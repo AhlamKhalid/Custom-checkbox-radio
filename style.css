@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #2a272e;
+  padding-left: 80px;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+/* No special styling for inputs */
+.radio-input,
+.checkbox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+/* radio */
+.radio-container {
+  /* beside each other */
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.radio-input {
+  /* remove from document flow */
+  position: absolute;
+}
+
+.radio-label {
+  color: #78767a;
+  font-size: 14px;
+  /* expands its parent */
+  display: inline-block;
+  padding: 8px 24px;
+  border: 2px solid #78767a;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* direct sibling */
+.radio-input:checked + .radio-label {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* checkbox */
+.checkbox-container {
+  /* align inputs with labels */
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #78767a;
+  border-radius: 5px;
+  margin-right: 16px;
+  /* to position tick mark */
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-input:checked {
+  border-color: #fff;
+}
+
+.checkbox-input:checked::after {
+  content: "";
+  width: 6px;
+  height: 4px;
+  border: solid #fff;
+  border-width: 0 0 2px 2px;
+  /* 2D rotation to left */
+  transform: rotate(-45deg);
+  /* reltaive to .checkbox-input */
+  position: absolute;
+  left: 4px;
+  top: 4px;
+}
+
+.checkbox-label {
+  color: #78767a;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-input:checked + .checkbox-label {
+  color: #fff;
+}
